@@ -1,0 +1,93 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.concurrent.ThreadLocalRandom;
+
+
+
+
+
+
+public class Main {
+
+    public static void main(String[] args) throws UnknownHostException {
+
+
+        pipo opipo = new pipo();
+
+        opipo.algo();
+
+        ip = InetAddress.getLocalHost();
+
+        iplabel.setText("ip local :" + ip.getHostAddress());
+
+    }
+    public  static JLabel iplabel;
+    public  static InetAddress ip;
+    public static class pipo {
+
+        public void pipo() {
+        }
+
+        public void algo() {
+            JFrame f = new JFrame("VENTANA SERVER");
+
+
+            final JTextField tf = new JTextField();
+            tf.setBounds(50, 50, 150, 20);
+
+            JButton b = new JButton("Cucha");
+            b.setBounds(50, 100, 95, 20);
+
+
+            iplabel = new JLabel("datos:");
+            iplabel.setBounds(200, 10, 100, 40);
+
+            JButton j = new JButton("pasala");
+            j.setBounds(300, 100, 95, 20);
+
+            JButton salir = new JButton("back");
+            salir.setBounds(200, 100, 95, 20);
+
+            final JTextField w = new JTextField();
+            w.setBounds(50, 10, 100, 30);
+
+            j.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    w.setText("FLIPENDO");
+                }
+            });
+
+
+            b.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    tf.setText("okita");
+
+                }
+            });
+            salir.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                 f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+                }
+            });
+
+            //maximizar el frame
+            //f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+            //meto los objetos b,tf y titulo al frame
+            f.add(w);
+            f.add(j);
+            f.add(b);
+            f.add(tf);
+            f.add(salir);
+            f.add(iplabel);
+            //tamaño del frame
+            f.setSize(700, 400);
+            //
+            f.setLayout(null);
+            //
+            f.setVisible(true);
+        }
+    }
+
+}
