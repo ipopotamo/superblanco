@@ -16,10 +16,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        pipo opipo = new pipo();
 
-       
         ServerSocket ss = new ServerSocket(4080);
+
+        pipo opipo = new pipo();
 
 
         opipo.algo();
@@ -56,7 +56,7 @@ public class Main {
                 this.dos = dos;
             }
 
-            @Override
+
             public void run() {
                 String received;
                 String toreturn;
@@ -145,76 +145,78 @@ public class Main {
 
 
             }
-            public static class pipo {
-
-                public void pipo() {
-                }
-
-                public void algo() {
-                    JFrame f = new JFrame("VENTANA SERVER");
-
-
-                    final JTextField tf = new JTextField();
-                    tf.setBounds(50, 50, 150, 20);
-
-                    JButton b = new JButton("Cucha");
-                    b.setBounds(50, 100, 95, 20);
-
-                    iplabel = new JLabel("datos:");
-                    iplabel.setBounds(200, 10, 700, 40);
-
-                    JButton j = new JButton("pasala");
-                    j.setBounds(300, 100, 95, 20);
-
-                    JButton salir = new JButton("back");
-                    salir.setBounds(200, 100, 95, 20);
-
-                    final JTextField w = new JTextField();
-                    w.setBounds(50, 10, 100, 30);
-
-                    j.addActionListener(new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            w.setText("FLIPENDO");
-                        }
-                    });
-
-
-                    b.addActionListener(new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            tf.setText("JUAN");
-
-                        }
-                    });
-                    salir.addActionListener(new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
-                        }
-                    });
-
-
-                    //maximizar el frame
-                    //f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-                    //meto los objetos b,tf y titulo al frame
-                    f.add(w);
-                    f.add(j);
-                    f.add(b);
-                    f.add(tf);
-
-                    f.add(salir);
-                    f.add(iplabel);
-                    //tamaño del frame
-                    f.setSize(700, 900);
-                    //
-                    f.setLayout(null);
-                    //
-                    f.setVisible(true);
-                }
-            }
 
         }
 
+    }
+
+    public static class pipo {
+
+        public void pipo() {
+        }
+
+        public void algo() {
+            JFrame f = new JFrame("VENTANA SERVER");
+
+
+            final JTextField tf = new JTextField();
+            tf.setBounds(50, 50, 150, 20);
+
+            JButton b = new JButton("Cucha");
+            b.setBounds(50, 100, 95, 20);
+
+            iplabel = new JLabel("datos:");
+            iplabel.setBounds(200, 10, 700, 40);
+
+            JButton j = new JButton("pasala");
+            j.setBounds(300, 100, 95, 20);
+
+            JButton salir = new JButton("back");
+            salir.setBounds(200, 100, 95, 20);
+
+            final JTextField w = new JTextField();
+            w.setBounds(50, 10, 100, 30);
+
+            j.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    w.setText("FLIPENDO");
+                }
+            });
+
+
+            b.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    tf.setText("JUAN");
+
+                }
+            });
+            salir.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+                }
+            });
+
+
+            //maximizar el frame
+            //f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+            //meto los objetos b,tf y titulo al frame
+            f.add(w);
+            f.add(j);
+            f.add(b);
+            f.add(tf);
+
+            f.add(salir);
+            f.add(iplabel);
+            //tamaño del frame
+            f.setSize(700, 900);
+            //
+            f.setLayout(null);
+            //
+            f.setVisible(true);
+        }
+    }
+}
 
         
 
-    }
-}
+
