@@ -1,0 +1,125 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+import java.net.*;
+import java.io.*;
+import java.net.ServerSocket;
+
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        pipo opipo = new pipo();
+
+        opipo.algo();
+        try {
+            Scanner scn = new Scanner(System.in);
+
+            // getting localhost ip
+            InetAddress ip = InetAddress.getByName("localhost");
+
+            // establish the connection with server port 5056
+            Socket s = new Socket(ip, 5056);
+
+
+            DataInputStream dis = new DataInputStream(s.getInputStream());
+            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+
+
+            while (true) {
+
+                System.out.println(dis.readUTF());
+                String tosend = scn.nextLine();
+                dos.writeUTF(tosend);
+
+                if (tosend.equals("Exit")) {
+                    System.out.println("Closing this connection : " + s);
+                    s.close();
+                    System.out.println("Connection closed");
+                    break;
+                }
+
+
+                String received = dis.readUTF();
+                System.out.println(received);
+            }
+
+            scn.close();
+            dis.close();
+            dos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static class pipo {
+
+        public void pipo() { }
+
+        public void algo() {
+            JFrame f = new JFrame("WINDOW CLIENTE");
+
+
+            final JTextField tf = new JTextField();
+            tf.setBounds(50, 50, 150, 20);
+
+            JButton b = new JButton("Conectar");
+            b.setBounds(50, 100, 95, 20);
+
+
+            JLabel titulo = new JLabel("datos:");
+            titulo.setBounds(10, 10, 100, 30);
+
+            JButton j = new JButton("Send");
+            j.setBounds(300, 100, 95, 20);
+
+            final JTextField w = new JTextField();
+            w.setBounds(50, 10, 100, 30);
+
+            j.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    w.setText("FLIPENDO");
+                }
+            });
+
+
+            b.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    tf.setText("plin plom plin plin plin plin plin plom plom plin");
+                }
+            });
+
+
+            //maximizar el frame
+            //f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+            //meto los objetos b,tf y titulo al frame
+            f.add(w);
+            f.add(j);
+            f.add(b);
+            f.add(tf);
+            f.add(titulo);
+            //tamaño del frame
+            f.setSize(700, 400);
+            //
+            f.setLayout(null);
+            //
+            f.setVisible(true);
+        }
+
+    }
+
+
+}
+
+
+
