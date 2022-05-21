@@ -28,7 +28,7 @@ public class Main {
             InetAddress ip = InetAddress.getByName("localhost");
 
             // establish the connection with server port 5056
-            Socket s = new Socket(ip, 5056);
+            Socket s = new Socket(ip, 4080);
 
 
             DataInputStream dis = new DataInputStream(s.getInputStream());
@@ -86,6 +86,9 @@ public class Main {
             final JTextField w = new JTextField();
             w.setBounds(50, 10, 100, 30);
 
+            JButton salir = new JButton("back");
+            salir.setBounds(200, 100, 95, 20);
+
             j.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     w.setText("FLIPENDO");
@@ -99,6 +102,11 @@ public class Main {
                 }
             });
 
+            salir.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+                }
+            });
 
             //maximizar el frame
             //f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
@@ -110,6 +118,7 @@ public class Main {
             f.add(titulo);
             //tamaño del frame
             f.setSize(700, 400);
+            f.add(salir);
             //
             f.setLayout(null);
             //
@@ -120,6 +129,7 @@ public class Main {
 
 
 }
+
 
 
 
