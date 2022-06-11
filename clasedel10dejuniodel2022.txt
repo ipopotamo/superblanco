@@ -1,0 +1,31 @@
+creo socket, luego hago bind (java lo hace solo, en c no) 
+del lado del server connect , el lado de lcliente es un accept 
+como se si un socket esta vivo: abro un cmd un netstat -an para ver que puerto esta escuchando o utilizandoce.
+putti sirve para conexiones telnet y ssh. (lackblebi una minicomputadora un arduino mejor, puede tener un os  )
+remotedeskop(un escritorio remoto permite ver y controlar la computadora de otra persona )
+
+
+Estructura de cliente: 
+
+import soket;
+
+s = ss.socket(AF_INET,soket.STREAM);
+
+host = socket.gethostbyname('www.google.com');
+
+s.socket(host,3323); 
+
+
+entrega = s.reciv(256);
+s.sendall("");
+
+
+
+
+Lado del server:
+
+import soket;
+
+s = ss.socket(AF_INET,soket.STREAM);
+
+s.bind(ip,puerto);
