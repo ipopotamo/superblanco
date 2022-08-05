@@ -1,0 +1,41 @@
+visual = xml
+codigo = java
+
+Manifest = propiedades de la app, permisos, librerias externas(volley permite request http(get y post) le habla al backend)
+
+Web apps = es barato, pero poco libre
+
+XML => activity => layout => 
+
+Layout vertical editT esta abajo o arriba de algo, horizontal edtiT izquierda o derecah de algo, Constraint muy lindo permite de todo es la wea de los resortes
+
+
+JAVA
+
+Pakege (a que pertenece esto)(se utiliza con el nombre de dominio si esta app esta asosiada con un dominio)
+
+class Mayinactivity Extens  
+{
+
+  Oncreate()
+  {
+    set.contentview();
+
+    Button a = (button) findViewById(R.id.button);  
+
+
+    gettext().tostring();
+    
+    
+}
+
+
+el intent = ademas de pasar de un activyti a otro si no para usar servicios de lsistema operativo
+
+postman 
+
+log.d, log.debug(la mejorsita) si queres ver tenes que tener el celu conectado
+toast ()
+editex y imprimir lo que queres ver, para luego eleiminar esta wea.
+
+explotar toque algo y murio
