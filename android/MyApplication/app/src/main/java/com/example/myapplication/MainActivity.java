@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +12,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText paz;
-    private EditText Ema;
-    private Button  pipo;
+
+    private String contraseña2 = "perry";
+    private String email2      = "pipo@gmail.com";
 
 
     @Override
@@ -21,24 +22,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Ema  = (EditText) findViewById(R.id.nombre);
-        paz  = (EditText) findViewById(R.id.contra);
-        pipo = (Button) findViewById(R.id.dolar);
+        Intent popo = new Intent(this, MainActivity2.class);
+
+        EditText email       = (EditText) findViewById(R.id.nombre);
+        EditText contraseña  = (EditText) findViewById(R.id.contra);
+        Button pipo = (Button) findViewById(R.id.dolar);
+
+        pipo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ((email.getText().toString()).equals(email2) && (contraseña.getText().toString()).equals(contraseña2)){
+
+                    Log.d("TUSUPERVIEJA","juan");
+                    startActivity(popo);
+                }
+            }
+        });
 
 
-    }
-
-    public void jotaro(View v)
-    {
-
-        String lol1 = Ema.getText().toString();
-        String lol2 = paz.getText().toString();
 
 
-        if(lol1 == "pipo@gmail.com"){
-            Intent popo = new Intent(this, MainActivity2.class);
-            startActivity(popo);
-        }
     }
 
 }
