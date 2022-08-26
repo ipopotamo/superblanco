@@ -23,10 +23,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent popo = new Intent(this, MainActivity2.class);
+        Intent juan = new Intent(this, buscar.class);
+
 
         EditText email       = (EditText) findViewById(R.id.nombre);
         EditText contraseña  = (EditText) findViewById(R.id.contra);
         Button pipo = (Button) findViewById(R.id.dolar);
+        Button SH   = (Button) findViewById(R.id.SH);
 
         pipo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +40,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(popo);
                 }
             }
-        });
 
+
+        });
+        SH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(juan);
+            }
+        });
 
 
 
