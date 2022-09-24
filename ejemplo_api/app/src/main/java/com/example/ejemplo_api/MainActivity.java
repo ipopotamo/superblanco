@@ -17,6 +17,9 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
     private  RequestQueue mRequestQueue;
     private  StringRequest mStringRequest;
@@ -69,5 +72,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void onErrorResponse(volleyError error){
         Log.e(TAG,"error: " +error.toString);
+    }
+
+    private Map<String,String>getParams(){
+        Map<String,String> params = new HashMap<String,String>();
+        params.put("id","25");
+        return params;
     }
 }
