@@ -14,9 +14,9 @@ public class crear extends AppCompatActivity {
         setContentView(R.layout.activity_crear);
 
         EditText email       = (EditText) findViewById(R.id.Email);
-        EditText contraseña  = (EditText) findViewById(R.id.Pasword);
+        EditText contraseña  = (EditText) findViewById(R.id.Password);
         EditText dia         = (EditText) findViewById(R.id.dia);
-        EditText hora        = (EditText) findViewById(R.id.hora);
+        EditText hora        = (EditText) findViewById(R.id.fecha);
         Button   boton       = (Button) findViewById(R.id.boton);
 
 

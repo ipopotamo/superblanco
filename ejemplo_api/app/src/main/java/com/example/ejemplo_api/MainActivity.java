@@ -21,12 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private  RequestQueue mRequestQueue;
-    private  StringRequest mStringRequest;
+
 
     private EditText edad;
 
-    private String url = "http:/192.168.137.1/androidusers/buscar.php";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,49 +33,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent popo = new Intent(this, crear.class);
-        Intent juan  = new Intent(this, buscar.class);
+
 
         Button pipo = (Button) findViewById(R.id.crear);
-        Button SH   = (Button) findViewById(R.id.buscar);
+        Button SH = (Button) findViewById(R.id.buscar);
 
         pipo.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-        public void onClick(View view)
-            {
-               startActivity(popo);
-
-            }
-        });
-        SH.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    sendAndRequestResponse();
-                    startActivity(juan);
-                }
-
-
-    });
-
-    }
-    private void sendAndRequestResponse() {
-        mRequestQueue= Volley.newRequestQueue(this);
-        mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(String response) {
-                Log.e("HttpClient","success! response: "+response.toString());
-                Toast.makeText(getApplicationContext(),"Response: "+ response.toString());
-
+            public void onClick(View view) {
+                startActivity(popo);
             }
         });
 
-    }
-    private void onErrorResponse(volleyError error){
-        Log.e(TAG,"error: " +error.toString);
+
     }
 
-    private Map<String,String>getParams(){
-        Map<String,String> params = new HashMap<String,String>();
-        params.put("id","25");
-        return params;
-    }
 }
