@@ -11,11 +11,15 @@
 
 <?php
     $var = include("conexion.php");
-
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
  if (trim('registre')) {
     $id = $_POST['id'];
-	$consulta = "SELECT * FROM `user` WHERE id = '$id' ";
-	$resultado = mysqli_query($mysql,$consulta);
+	
+	
+		$consulta = "SELECT * FROM `user` WHERE id = '$id' ";
+		$resultado = mysqli_query($mysql,$consulta);
+	
+	
  }
 
 
